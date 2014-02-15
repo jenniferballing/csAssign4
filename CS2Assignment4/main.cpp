@@ -4,7 +4,7 @@
 #include "TwoDayPackage.h"
 #include <fstream>
 
-void labelFunc(Person s, Person r, string cost);
+void labelFunc(Person &s, Person &r, string cost);
 void fileInputFunc ();
 int main()
 {
@@ -15,7 +15,7 @@ int main()
     return 0;
 }
 
-void labelFunc(Person s, Person r, string cost)
+void labelFunc(Person &s, Person &r, string cost)
 {
     string StempN=s.getName();
     string StempA=s.getAdd();
@@ -30,7 +30,7 @@ void labelFunc(Person s, Person r, string cost)
     string RtempZ=r.getZip();
 
     cout<<"Testing, testing..."<<endl;
-    cout<<StempN<<endl;
+    
     cout<<StempA<<endl;
     cout<<StempC<<endl;
     cout<<StempS<<endl;
@@ -73,8 +73,6 @@ void fileInputFunc ()
         fin>>weight>>costPerOz>>sName>> sAdd>> sCity>> sState>> sZip>> rName>> rAdd >> rCity>> rState>> rZip>>addPerOz;
     }
 
-   /* cout<<weight<<costPerOz<<sName<< sAdd<<sCity<<sState<< sZip<< rName<< rAdd << rCity<<rState<< rZip;*/
-
     send.setName(sName);
     send.setAdd(sAdd);
     send.setCity(sCity);
@@ -87,8 +85,11 @@ void fileInputFunc ()
     receive.setState(rState);
     receive.setZip(rZip);
 
-   /* cout<<"Testing again..."<<send.getName()<<send.getAdd()<<send.getCity()<<send.getCity()<<send.getState()<<send.getZip();*/
-
     string cost="6*5=30";
+    Person* sendPtr=new Person;
+    Person* receivePtr= new Person;
+    sendPtr=&send;
+    receivePtr=&receive;
+
     labelFunc(send, receive, cost);
 }
