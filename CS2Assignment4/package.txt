@@ -1,6 +1,6 @@
 P
 50
-.04
+.0333
 PSName
 PSAddress
 PSCity
@@ -25,6 +25,23 @@ ORCity
 ORState
 ORZip
 25.25
+t
+154
+.018
+TSName
+TSAddress
+TSCity
+TSState
+TSZip
+TRName
+TRAddress
+TRCity
+TRState
+TRZip
+.025
+
+
+
 
 
 
