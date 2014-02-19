@@ -1,41 +1,41 @@
 P
 50
 .0333
-PSFirstName PSLastName
-PSAddress
-PSCity
+PSName name
+PSAddress address address
+PSCity city
 PSState
 PSZip
-PRName
-PRAddress
+PRName name
+PRAddress address address
 PRCity
 PRState
 PRZip
 O
 55
 .06
-OSName
-OSAddress
-OSCity
+OSName name 
+OSAddress address address
+OSCity city
 OSState
 OSZip
-ORName
-ORAddress
-ORCity
+ORName name
+ORAddress address address
+ORCity city
 ORState
 ORZip
 25.25
 t
 154
 .018
-TSName
-TSAddress
-TSCity
+TSName name
+TSAddress address address
+TSCity city
 TSState
 TSZip
-TRName
-TRAddress
-TRCity
+TRName name
+TRAddress address address
+TRCity city
 TRState
 TRZip
 .025

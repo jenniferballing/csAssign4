@@ -11,6 +11,7 @@ public:
      TwoDayPackage(double cpo, double w, double c, Person s, Person r);
      void setCPOIncrease(double);
      double getCPOIncrease();
+     double costCalc(double);
      ~TwoDayPackage(void);
 };
 #endif

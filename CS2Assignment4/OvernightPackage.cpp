@@ -16,6 +16,14 @@ double OvernightPackage::getFlatRate()
 {
      return flatRate;
 }
+double OvernightPackage::costCalc(double a)
+{
+    double w=getWeight();
+    double cpo=getCostPerOz();
+    double cost=w*cpo;
+    cost+=a;
+    return cost;
+}
 
 OvernightPackage::~OvernightPackage(void)
 {

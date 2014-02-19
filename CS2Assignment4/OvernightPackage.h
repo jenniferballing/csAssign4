@@ -13,6 +13,7 @@ public:
      OvernightPackage(double, double, double, Person, Person);
      void setFlatRate(double);
      double getFlatRate();
+     double costCalc(double);
      ~OvernightPackage(void);
 };
 #endif

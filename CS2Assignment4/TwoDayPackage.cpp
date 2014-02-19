@@ -17,6 +17,13 @@ double TwoDayPackage::getCPOIncrease()
 {
      return CPOIncrease;
 }
+double TwoDayPackage::costCalc(double a)
+{
+    double c=getCostPerOz();
+    double w=getWeight();
+    double cost=(c+a)*w;
+    return cost;
+}
 
 TwoDayPackage::~TwoDayPackage(void)
 {
