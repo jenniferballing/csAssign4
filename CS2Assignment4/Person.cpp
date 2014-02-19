@@ -18,6 +18,8 @@ Person::Person (string n, string a, string c, string s, string z)
 	state=s;
 	zipCode=z;
 }
+
+//copy constructor
 Person::Person (const Person &obj)
 {
 	string tempN, tempA, tempC, tempS, tempZ;
@@ -84,6 +86,12 @@ void Person::setState (string s)
 void Person::setZip (string z)
 {
 	zipCode=z;
+}
+
+void Person::printFunction()
+{
+	cout<<name<<endl<<address<<endl;
+	cout<<city<<" "<<state<<", "<<zipCode<<endl;
 }
 
 Person::~Person(void)

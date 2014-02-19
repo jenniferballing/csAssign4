@@ -10,7 +10,7 @@ class OvernightPackage:public Package
      double flatRate;
 public:
      OvernightPackage(void);
-     OvernightPackage(double, double, double, Person, Person);
+     OvernightPackage(double, int, double, Person, Person);
      void setFlatRate(double);
      double getFlatRate();
      double costCalc(double);

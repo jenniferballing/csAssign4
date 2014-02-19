@@ -8,7 +8,7 @@ class TwoDayPackage:public Package
 
 public:
      TwoDayPackage(void);
-     TwoDayPackage(double cpo, double w, double c, Person s, Person r);
+     TwoDayPackage(double cpo, int w, double c, Person s, Person r);
      void setCPOIncrease(double);
      double getCPOIncrease();
      double costCalc(double);

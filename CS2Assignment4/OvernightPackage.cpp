@@ -4,7 +4,7 @@ OvernightPackage::OvernightPackage()
 {
      flatRate=0;
 }
-OvernightPackage::OvernightPackage(double f, double w, double c, Person s, Person r):Package (w, c, s, r) 
+OvernightPackage::OvernightPackage(double f, int w, double c, Person s, Person r):Package (w, c, s, r) 
 {
      flatRate=f;
 }
@@ -18,7 +18,7 @@ double OvernightPackage::getFlatRate()
 }
 double OvernightPackage::costCalc(double a)
 {
-    double w=getWeight();
+    int w=getWeight();
     double cpo=getCostPerOz();
     double cost=w*cpo;
     cost+=a;

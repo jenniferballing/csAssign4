@@ -31,6 +31,8 @@ public:
 	void setState (string);
 	void setZip (string);
 
+	void printFunction();
+
 	~Person(void);
 };
 #endif

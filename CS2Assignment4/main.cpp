@@ -8,17 +8,13 @@
 
 using namespace std;
 
-//check pointers
-//delete stuff
-
 void labelFunc(Person &s, Person &r, double cost);
 void fileInputFunc ();
 
 int main()
 {
     fileInputFunc();
-    Person a();
-    
+       
     int pause=0;
     cin>>pause;
     return 0;
@@ -26,36 +22,22 @@ int main()
 
 void labelFunc(Person &s, Person &r, double cost)
 {
-    string StempN=s.getName();
-    string StempA=s.getAdd();
-    string StempC=s.getCity();
-    string StempS=s.getState();
-    string StempZ=s.getZip();
-
-    string RtempN=r.getName();
-    string RtempA=r.getAdd();
-    string RtempC=r.getCity();
-    string RtempS=r.getState();
-    string RtempZ=r.getZip();
-
-    cout<<endl;
-    cout<<"******SHIPPING LABEL******"<<endl<<endl;
+    cout<<endl<<"******SHIPPING LABEL******"<<endl<<endl;
     cout<<"Delivery Cost: $"<< fixed<<setprecision(2)<< cost<< endl<<endl<<endl;
     
     cout<<"FROM: "<<endl;
-    cout<<StempN <<endl;
-    cout<<StempA<<"\n"<<StempC<<", "<<StempS<<" "<<StempZ<<endl<<endl<<endl;
+    s.printFunction();
+    cout<<endl<<endl;
 
     cout<<"SHIP TO: "<<endl;
-    cout<<RtempN <<endl;
-    cout<<RtempA<<endl;
-    cout<<RtempC<<", "<<RtempS<<" "<<RtempZ<<endl<<endl;
-    cout<<"***************************"<<endl<<endl<<endl<<endl;    
+    r.printFunction();
+    cout<<endl<<endl<<"***************************"<<endl<<endl<<endl<<endl;    
 }
 void fileInputFunc ()
 {
     string pkgType, sName, sAdd, sCity, sState, sZip, rName, rAdd, rCity, rState, rZip;
-    double weight, costPerOz, addPerOz, addFlatRate, costToShip;
+    double costPerOz, addPerOz, addFlatRate, costToShip;
+    int weight;
         
     ifstream fin ("package.txt");
     
@@ -102,7 +84,9 @@ void fileInputFunc ()
             costToShip=P.costCalc();
 
             //Create label
-            labelFunc(s, r, costToShip);
+            Person &Stemp=s;
+            Person &Rtemp=r;
+            labelFunc(Stemp, Rtemp, costToShip);
         }
         else if( pkgType == "O" || pkgType  == "o")
         {
@@ -147,7 +131,9 @@ void fileInputFunc ()
             costToShip=O.costCalc(addFlatRate);
 
             //Create label
-            labelFunc(s, r, costToShip);
+            Person &Stemp=s;
+            Person &Rtemp=r;
+            labelFunc(Stemp, Rtemp, costToShip);
         }
         else if( pkgType == "T" || pkgType  == "t")
         {
@@ -192,7 +178,9 @@ void fileInputFunc ()
             costToShip=T.costCalc(addPerOz);
 
             //Create label
-            labelFunc(s, r, costToShip);
+            Person &Stemp=s;
+            Person &Rtemp=r;
+            labelFunc(Stemp, Rtemp, costToShip);
         }    
         fin>>pkgType; 
     }

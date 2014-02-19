@@ -11,7 +11,7 @@ Package::Package(void)
 	costPerOz=0;
 }
 
-Package::Package(double w, double cost, Person s, Person r)
+Package::Package(int w, double cost, Person s, Person r)
 {
 	weight=w;
 	costPerOz=cost;
@@ -23,7 +23,7 @@ Package::Package(double w, double cost, Person s, Person r)
 	receiver = r;
 }
 
-double Package::getWeight()
+int Package::getWeight()
 {
 	return weight;	
 }
@@ -31,7 +31,7 @@ double Package::getCostPerOz()
 {
 	return costPerOz;
 }
-void Package::setWeight(double w)
+void Package::setWeight(int w)
 {
 	weight = w;
 }
@@ -42,7 +42,7 @@ void Package::setCostPerOz(double cost)
 
 double Package::costCalc()
 {
-	return weight*costPerOz;
+	return (double)weight*costPerOz;
 }
 
 Package::~Package(void)

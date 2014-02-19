@@ -10,17 +10,17 @@ using namespace std;
 class Package
 {
 	//Shared with derived classes
-	double weight;
+	int weight;
 	double costPerOz;
 	Person sender;
 	Person receiver;
 
 public:
 	Package(void);
-	Package(double, double, Person, Person);
-	double getWeight();
+	Package(int, double, Person, Person);
+	int getWeight();
 	double getCostPerOz();
-	void setWeight(double);
+	void setWeight(int);
 	void setCostPerOz(double);
 	double costCalc();
 	~Package(void);

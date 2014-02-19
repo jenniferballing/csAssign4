@@ -5,7 +5,7 @@ TwoDayPackage::TwoDayPackage(void)
 {
      CPOIncrease=0;
 }
-TwoDayPackage::TwoDayPackage(double cpo, double w, double c, Person s, Person r): Package(w, c, s, r)
+TwoDayPackage::TwoDayPackage(double cpo, int w, double c, Person s, Person r): Package(w, c, s, r)
 {
      CPOIncrease=cpo;
 }
@@ -20,7 +20,7 @@ double TwoDayPackage::getCPOIncrease()
 double TwoDayPackage::costCalc(double a)
 {
     double c=getCostPerOz();
-    double w=getWeight();
+    int w=getWeight();
     double cost=(c+a)*w;
     return cost;
 }
