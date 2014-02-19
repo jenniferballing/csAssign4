@@ -1,11 +1,16 @@
 #include "Package.h"
+#include <fstream>
+#include "Person.h"
+
+fstream fin ("package.txt");
+
 
 Package::Package(void)
 {
 	weight =0;
 	costPerOz=0;
 }
-//X::X(int a, float b, string c) : Y(b, c)
+
 Package::Package(double w, double cost, Person s, Person r)
 {
 	weight=w;
@@ -33,6 +38,11 @@ void Package::setWeight(double w)
 void Package::setCostPerOz(double cost)
 {
 	costPerOz = cost;
+}
+
+double Package::costCalc()
+{
+	return weight*costPerOz;
 }
 
 Package::~Package(void)

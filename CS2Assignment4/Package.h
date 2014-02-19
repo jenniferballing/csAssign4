@@ -22,6 +22,7 @@ public:
 	double getCostPerOz();
 	void setWeight(double);
 	void setCostPerOz(double);
+	double costCalc();
 	~Package(void);
 };
 #endif

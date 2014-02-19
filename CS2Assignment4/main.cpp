@@ -4,6 +4,14 @@
 #include "TwoDayPackage.h"
 #include <fstream>
 #include <iomanip>
+#include <string>
+
+using namespace std;
+
+//noskipws
+            //calculate within class
+            //instance of class
+
 
 void labelFunc(Person &s, Person &r, double cost);
 void fileInputFunc ();
@@ -11,6 +19,7 @@ void fileInputFunc ();
 int main()
 {
     fileInputFunc();
+    Person a();
     
     int pause=0;
     cin>>pause;
@@ -46,19 +55,44 @@ void labelFunc(Person &s, Person &r, double cost)
 void fileInputFunc ()
 {
     int pause, weight;
-    string pkgType, sName, sAdd, sCity, sState, sZip;
+    string pkgType, sAdd, sCity, sState, sZip;
     string rName, rAdd, rCity, rState, rZip;
     double costPerOz, addPerOz, addFlatRate, costToShip;
-    Person send, receive;
-    
+    string sName;
+        
     ifstream fin ("package.txt");
-    fin>> pkgType;
+        
+    getline(fin, pkgType);
     while(!fin.eof())
     {        
         if( pkgType == "p" || pkgType  == "P")
         {
-            fin>>weight>>costPerOz>>sName>> sAdd>> sCity>> sState>> sZip>> rName>> rAdd >> rCity>> rState>> rZip;
-            costToShip=weight*costPerOz;
+            string temp;
+            getline(fin, temp);
+            weight=atof(temp.c_str());//weight
+            getline(fin, temp);
+            costPerOz=atof(temp.c_str());//costPerOz
+            
+            getline(fin, sName);
+            getline(fin, sAdd);
+            getline(fin, sCity);
+            getline(fin, sState);
+            getline(fin, sZip);
+
+            getline(fin, rName);
+            getline(fin, rAdd);
+            getline(fin, rCity);
+            getline(fin, rState);
+            getline(fin, rZip);
+            
+            Person s(sName, sAdd, sCity, sState, sZip);
+            Person r(rName, rAdd, rCity, rState, rZip);
+            
+            Package p (weight, costPerOz, s, r);
+            
+            costToShip=p.costCalc();
+
+            labelFunc(s, r, costToShip);
         }
         else if( pkgType == "O" || pkgType  == "o")
         {
@@ -71,7 +105,7 @@ void fileInputFunc ()
             costToShip=weight*(costPerOz+addPerOz);
         }
 
-        send.setName(sName);
+        /*send.setName(sName);
         send.setAdd(sAdd);
         send.setCity(sCity);
         send.setState(sState);
@@ -81,14 +115,14 @@ void fileInputFunc ()
         receive.setAdd(rAdd);
         receive.setCity(rCity);
         receive.setState(rState);
-        receive.setZip(rZip);
+        receive.setZip(rZip);*/
 
-        Person* sendPtr=new Person;
+        /*Person* sendPtr=new Person;
         Person* receivePtr= new Person;
         sendPtr=&send;
         receivePtr=&receive;
-
-        labelFunc(send, receive, costToShip);
+*/
+        
         fin>>pkgType; 
     }
 }

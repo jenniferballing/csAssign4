@@ -3,20 +3,20 @@
 
 Person::Person(void)
 {
-    name=" ";
-    address=" ";
-    city=" ";
-    state=" ";
-    zipCode=" ";
+	name=" ";
+	address=" ";
+	city=" ";
+	state=" ";
+	zipCode=" ";
 }
 
 Person::Person (string n, string a, string c, string s, string z)
 {
-    name=n;
-    address=a;
-    city=c;
-    state=s;
-    zipCode=z;
+	name=n;
+	address=a;
+	city=c;
+	state=s;
+	zipCode=z;
 }
 Person::Person (const Person &obj)
 {
@@ -30,60 +30,60 @@ Person::Person (const Person &obj)
 	ss>>tempS;
 	sz>>tempZ;
 
-     //Put back into strings and assign to this
-     stringstream ssn, ssa, ssc, sss, ssz;
-     ssn<<tempN;
+	 //Put back into strings and assign to this
+	 stringstream ssn, ssa, ssc, sss, ssz;
+	 ssn<<tempN;
 	name=ssn.str();
-     ssn<<tempA;
+	 ssn<<tempA;
 	address=ssa.str();
-     ssn<<tempC;
+	 ssn<<tempC;
 	city=ssc.str();
-     ssn<<tempS;
+	 ssn<<tempS;
 	state=sss.str();
-     ssn<<tempZ;
+	 ssn<<tempZ;
 	zipCode=ssz.str();	
 }
 
 string Person::getName ()
 {
-    return name;
+	return name;
 }
 string Person::getAdd ()
 {
-    return address;
+	return address;
 }
 string Person::getCity ()
 {
-    return city;
+	return city;
 }
 string Person::getState ()
 {
-    return state;
+	return state;
 }
 string Person::getZip ()
 {
-    return zipCode;
+	return zipCode;
 }
 
 void Person::setName (string n)
 {
-    name=n;
+	name=n;
 }
 void Person::setAdd (string a)
 {
-    address = a;
+	address = a;
 }
 void Person::setCity (string c)
 {
-    city=c;
+	city=c;
 }
 void Person::setState (string s)
 {
-    state=s;
+	state=s;
 }
 void Person::setZip (string z)
 {
-    zipCode=z;
+	zipCode=z;
 }
 
 Person::~Person(void)

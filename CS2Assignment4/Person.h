@@ -17,7 +17,7 @@ class Person
 public:
 	Person(void);
 	Person (string, string, string, string, string);
-     Person(const Person &);
+	Person(const Person &);
 
 	string getName ();
 	string getAdd ();

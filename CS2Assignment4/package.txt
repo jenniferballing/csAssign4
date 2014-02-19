@@ -1,7 +1,7 @@
 P
 50
 .0333
-PSName
+PSFirstName PSLastName
 PSAddress
 PSCity
 PSState
